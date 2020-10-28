@@ -1,0 +1,13 @@
+{% extends "stock_app/base.html" %}
+{% block content %}
+
+  <h1>You are now Logged Out</h1>
+  <div class="border-top pt-3"> <!-- "pt-3"-> padding top 3 -->
+
+	<small class="text-muted">
+	    <a href="{% url 'login' %}">LogIn Again</a>
+	    <!-- "ml-2"->margin left -->
+	</small>
+  </div>
+
+{% endblock content %}
