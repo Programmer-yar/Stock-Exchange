@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Results</title>
+</head>
+<body>
+ 
+<div>
+  <p><b>Volume Input:</b> {{ inputs.volume_input }}</p>
+  <p><b>Date Selected:</b> {{ inputs.date_input }}</p>
+</div>
+  
+<div class="table-responsive">
+  <table style = "width:100%">
+    <tr>
+      <th>Ticker</th>
+      <th>Up/Down</th> 
+      <th>Moving Average</th>
+    </tr>
+
+    {% for result in results %}
+    <tr>
+      <td>{{ result.symbol }}</td>
+      <td>{{ result.up_down }}</td>
+      <td>{{ result.moving_avg }}</td>
+    </tr>
+    {% endfor %}
+
+  </table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+{% extends "stock_app/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+<form method="POST" enctype="multipart/form-data">
+      
+      {% csrf_token %}
+      
+      <fieldset class="form-group">
+        <legend class="border-bottom">Enter Volume Input</legend>
+        <p>If you check mark the checkbox for recieve.</p>
+        <p>You will recieve email everyday on the basis of Entered Volume
+         and 100 days moving avg</p>
+        
+        {{ form|crispy }}
+      
+      </fieldset>
+      <div class="form-group">
+        <button class="btn btn-outline-info" type="submit">Submit</button>
+      </div>
+    </form>
+  
+
+{% endblock content %}

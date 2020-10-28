@@ -1,0 +1,41 @@
+{% extends "stock_app/base.html" %}
+{% load static %}
+{% block content %}
+
+  {% if user.is_authenticated %}
+  <div class="container">
+    <div class="justify-content-center">
+    <div class="page-header">
+      <h2>Welcome! you can give Inputs here</h2>
+    </div>
+    <div >  
+      <form method="GET" id='form' action="{% url 'stock-result' %}">  
+          <label for="volume">Enter Volume to Filter Companies:</label>
+          <input type="number" id="volume" name="volume" min="1" required> <br>
+          <label for="days">Moving Average Days: </label>
+          <input type="number" id="days" name="days" min="3" max="100" required> <br>
+          <label for="dates">Select a date: </label>
+          <select name="dates" id="stock-date" required>
+            {% for date in dates %} 
+              <option value="{{ date }}">{{ date }}</option>
+            {% endfor %}
+          </select> <br>
+          <input type="submit" id="submit" class="btn btn-outline-info">
+      </form>
+    </div>
+   </div>
+  </div>
+  {% else %}
+    <div class="container">
+      <h2>Get valuable insights from StockSite</h2>
+      <h4>Anaylsis over a wide range of user Selection</h4>
+      <h5>Select Volume, Moving Average Days and Date</h5>
+      <p>Login or Signup to get access to powerful tools</p>
+      <a class="btn btn-outline-info" href="{% url 'login' %}">Login</a>
+      <a class="btn btn-outline-info" href="{% url 'register' %}">Sign Up</a>
+    </div>
+  {% endif %}
+
+
+{% endblock content %}
+

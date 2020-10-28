@@ -1,0 +1,47 @@
+{% extends "stock_app/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="row">
+  <div class="col-md-8">
+
+    {% if results_found %}
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <tr>
+          <th>Ticker</th>
+          <th>Up/Down</th> 
+          <th>Moving Average</th>
+        </tr>
+
+        {% for list in crossings %}
+        <tr>
+          <td>{{ list.0 }}</td>
+          <td>{{ list.1 }}</td>
+          <td>{{ list.2 }}</td>
+        </tr>
+        {% endfor %}
+
+      </table>
+    </div>
+
+  {% else %}
+
+    <h2>No crossings were found.</h2>
+  {% endif %}
+        
+  </div>
+  <div class="col-md-4">
+    <div class="content-section">
+      <h3>Your Inputs</h3>
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-light">Volume: {{ filters.0}} </li>
+          <li class="list-group-item list-group-item-light">date: {{ filters.1}} </li>
+        </ul>
+    </div>
+  </div>
+</div>
+  
+
+{% endblock content %}
+

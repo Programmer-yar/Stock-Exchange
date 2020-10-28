@@ -1,0 +1,15 @@
+{% extends "stock_app/base.html" %}
+{% load static %}
+{% block content %}
+
+  <h3>Files available for download</h3>
+    <ul>
+      {% for name in names %}
+      <li><a href="{{ base_url }}{{ name }}" download>{{ name }}</a></li>
+      {% endfor %}
+    </ul>
+
+  
+
+{% endblock content %}
+
