@@ -9,7 +9,6 @@ App Functionality:
 - returns result which can be downloaded as pdf
 - Admin can upload files which are updated to database and media folder.
 - presents text files for downloading
-- Stores user specific inputs and email them everyday
 - Users can Register, login and run queries and view results.
 - Users can subscribe for everyday pdf email report on the basis of volume provided
   by them.
