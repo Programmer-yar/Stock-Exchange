@@ -3,7 +3,7 @@ App that analyzes stock exchange data to fetch indicators for specified input fi
 App Functionality:
 - Takes volume, date and moving average days as input from user
 - Filters out comapnies on the basis of previous 3 days volume
-- Calculates moving average from the date and number of days provided.
+- Calculates moving average on the basis of date and number of days provided.
 - checks for indicators in previous 5 days from the provided date and filters out
   companies
 - returns result which can be downloaded as pdf
